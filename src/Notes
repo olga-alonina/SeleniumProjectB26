@@ -1,7 +1,0 @@
-Notes for creating the project Framework:
-
-1.  Create project based on Maven and gave a name com.<Project name>
-2.  Add in pom.xml next dependencies:
-        2.1. selenium-java 3.141.59
-        2.2. webdrivermanager 5.1.0
-3.  Add gitIgnore file

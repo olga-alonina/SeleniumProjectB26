@@ -1,0 +1,14 @@
+Notes for creating the project Framework:
+
+1.  Create project based on Maven and gave a name com.<Project name>
+2.  Add in pom.xml next dependencies from https://mvnrepository.com/:
+        2.1. selenium-java 3.141.59
+        2.2. bonigarcia --> webdrivermanager 5.1.0
+3.  Create .gitignore file under project
+        /.idea/
+        /target/
+        /.iml/
+4.  Every time verify to have last version of Chrome/Firefox/...
+        or you can use WebDriverManager for that
+5.  Create com.<project> for using webApp testing under test/java/ folders
+6.        
