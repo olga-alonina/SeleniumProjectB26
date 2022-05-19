@@ -12,6 +12,23 @@ import java.util.ArrayList;
 
 public class US001_TC01_Login_AllCorrect {
 
+    /**
+     * USER STORY 001 - Login Functionality for NextBaseCRM
+     *
+     *  Test Cases 01-03
+     *  Login with correct Username and correct Password to HelpDesk Home page
+     *  Login with correct Username and correct Password to Marketing Home page
+     *  Login with correct Username and correct Password to HR Home page
+     *
+     *
+     *  Steps:
+     *      Given I am on "Authorization" Page
+     *      When I input helpdesk correct username
+     *      And I input helpdesk correct password
+     *      And I click Login button
+     *      Then I should navigate to Helpdesk/Marketing/HR home page
+     */
+
     /** Main method */
     public static void main(String[] args) throws InterruptedException {
 
@@ -114,13 +131,6 @@ public class US001_TC01_Login_AllCorrect {
         //9. Ext. quit()
         Driver.quit(driver);
 
-
     }
-
-
-
-
-
-
 
 }
