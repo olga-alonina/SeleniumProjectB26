@@ -10,24 +10,24 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
 
-public class US001_TC01_Login_AllCorrect {
+public class US001_TC01upto03_Login_AllCorrect {
 
-    /**
-     * USER STORY 001 - Login Functionality for NextBaseCRM
-     *
-     *  Test Cases 01-03
-     *  Login with correct Username and correct Password to HelpDesk Home page
-     *  Login with correct Username and correct Password to Marketing Home page
-     *  Login with correct Username and correct Password to HR Home page
-     *
-     *
-     *  Steps:
-     *      Given I am on "Authorization" Page
-     *      When I input helpdesk correct username
-     *      And I input helpdesk correct password
-     *      And I click Login button
-     *      Then I should navigate to Helpdesk/Marketing/HR home page
-     */
+        /**
+         * USER STORY 001 - Login Functionality for NextBaseCRM
+         *
+         *  Test Cases 01-03
+         *  Login with correct Username and correct Password to HelpDesk Home page
+         *  Login with correct Username and correct Password to Marketing Home page
+         *  Login with correct Username and correct Password to HR Home page
+         *
+         *
+         *  Steps:
+         *      Given I am on "Authorization" Page
+         *      When I input helpdesk correct username
+         *      And I input helpdesk correct password
+         *      And I click Login button
+         *      Then I should navigate to Helpdesk/Marketing/HR home page
+         */
 
     /** Main method */
     public static void main(String[] args) throws InterruptedException {
@@ -46,7 +46,6 @@ public class US001_TC01_Login_AllCorrect {
         //------------------------------------------------------//
 
         //4. ArrayList with correct Usernames
-
         ArrayList<String> UsernameList = new ArrayList<>();
 
             //5. add elements to ArrayList
@@ -80,8 +79,6 @@ public class US001_TC01_Login_AllCorrect {
                 action.sendKeys(UsernameList.get(i)).perform();
                     Utility.waitFor(3);
 
-
-
             //7.2. Navigate to PasswordBox & input password:
                 // Password Box for password
                 WebElement PasswordBox = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
@@ -90,7 +87,6 @@ public class US001_TC01_Login_AllCorrect {
                     Utility.waitFor(3);
                 action.sendKeys("UserUser").perform();
 
-
             //7.3. Navigate to Login Button & click()
                 // Login Button
                 WebElement LoginBttn = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
@@ -98,23 +94,19 @@ public class US001_TC01_Login_AllCorrect {
                 action.click(LoginBttn).perform();
                     Utility.waitFor(3);
 
-
             //7.4. Collect titles:
                 String titleObject = driver.getTitle();
                 titlesList.add(titleObject);
 
-
             //7.5. Logout process
-                // Drop List
+                // WebElement - Drop List
                 WebElement FunctionalityList = driver.findElement(By.id("user-block"));
-
+                //
                 action.moveToElement(FunctionalityList).click().perform();
                     Utility.waitFor(3);
-
-
                 // Logout Button
                 WebElement LogOutBtn = driver.findElement(By.xpath("//*[@id=\"popup-window-content-menu-popup-user-menu\"]/div/div/a[3]/span[2]"));
-
+                //
                 action.moveToElement(LogOutBtn).click().perform();
                     Utility.waitFor(3);
 

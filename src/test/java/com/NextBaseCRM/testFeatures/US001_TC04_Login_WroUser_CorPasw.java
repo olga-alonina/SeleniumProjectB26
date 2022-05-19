@@ -10,18 +10,18 @@ import org.openqa.selenium.interactions.Actions;
 
 public class US001_TC04_Login_WroUser_CorPasw {
 
-    /**
-     * USER STORY 001 - Login Functionality for NextBaseCRM
-     *
-     *  Test Cases 04
-     *  Login with null credentials
-     *
-     *
-     *  Steps:
-     *      Given I am on Authorization Page
-     *      When I click Login button
-     *      Then I should see note: Incorrect login or password
-     */
+        /**
+         * USER STORY 001 - Login Functionality for NextBaseCRM
+         *
+         *  Test Cases 04
+         *  Login with null credentials
+         *
+         *
+         *  Steps:
+         *      Given I am on Authorization Page
+         *      When I click Login button
+         *      Then I should see note: Incorrect login or password
+         */
 
     /** Main method */
     public static void main(String[] args) throws InterruptedException {
