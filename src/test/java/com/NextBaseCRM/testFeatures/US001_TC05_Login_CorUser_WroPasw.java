@@ -9,6 +9,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class US001_TC05_Login_CorUser_WroPasw {
+        /**
+         * USER STORY 001 - Login Functionality for NextBaseCRM
+         *
+         *  Test Cases 05
+         *  Login with correct Username and wrong Password
+         *
+         *
+         *  Steps:
+         *      Given I am on Authorization Page
+         *      When I enter correct username
+         *      And I enter wrong password
+         *      And I click Login button
+         *      Then I should see note: Incorrect login or password
+         */
 
     /** Main method */
     public static void main(String[] args) {

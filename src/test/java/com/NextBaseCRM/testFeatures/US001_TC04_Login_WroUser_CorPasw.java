@@ -25,9 +25,7 @@ public class US001_TC04_Login_WroUser_CorPasw {
      *      Then I should see note: Incorrect login or password
      */
 
-    /**
-     * Main method
-     */
+    /** Main method */
     public static void main(String[] args) throws InterruptedException {
 
         //------------------------------------------------------//
