@@ -80,7 +80,14 @@ public class US001_TC05_Login_CorUser_WroPasw {
                 System.out.println("REPORT: The note \"incorrect login or password\" is NOT Displayed");
             }
 
-        //9. Ext. quit()
+        //9. reporting about termination of the Testing
+            System.out.println("------------------------------------------------------");
+            System.out.println("Testing is complete!");
+            System.out.println("======================================================");
+
+
+        //10. Ext. quit()
+            Driver.quit(driver);    //9. Ext. quit()
             Driver.quit(driver);
 
     }

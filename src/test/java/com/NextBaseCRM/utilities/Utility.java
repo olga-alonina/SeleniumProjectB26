@@ -123,6 +123,7 @@ public class Utility {
         } else {
             System.out.println("Verification the Authorization page FAIL");
         }
+        System.out.println("------------------------------------------------------");
     }
 
 }

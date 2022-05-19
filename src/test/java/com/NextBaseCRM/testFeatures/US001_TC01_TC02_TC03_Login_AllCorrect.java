@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
 
-public class US001_TC01upto03_Login_AllCorrect {
+public class US001_TC01_TC02_TC03_Login_AllCorrect {
 
         /**
          * USER STORY 001 - Login Functionality for NextBaseCRM
@@ -58,6 +58,10 @@ public class US001_TC01upto03_Login_AllCorrect {
             UsernameList.add("hr29@cybertekschool.com");
             UsernameList.add("hr30@cybertekschool.com");
 
+
+        System.out.println("Size of the UsernameList is : " + UsernameList.size() + " elements");
+        System.out.println("------------------------------------------------------");
+
         //5.
         Actions action = new Actions(driver);
 
@@ -67,6 +71,7 @@ public class US001_TC01upto03_Login_AllCorrect {
         //7. Loop
         for (int i = 0;  i < UsernameList.size();  i++) {
 
+
             //7.1. Navigate to LoginBox & input username from the List:
                 // Login Box for username
                 WebElement LoginBox = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
@@ -74,17 +79,17 @@ public class US001_TC01upto03_Login_AllCorrect {
                 action.moveToElement(LoginBox).click().perform();
                 // Select All & Delete
                 action.keyDown(Keys.CONTROL).sendKeys(Keys.chord("A")).keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
-                    Utility.waitFor(3);
+                    Utility.waitFor(5);
                 // input username from loop
                 action.sendKeys(UsernameList.get(i)).perform();
-                    Utility.waitFor(3);
+                    Utility.waitFor(5);
 
             //7.2. Navigate to PasswordBox & input password:
                 // Password Box for password
                 WebElement PasswordBox = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
                 // move to password
                 action.click(PasswordBox).doubleClick().sendKeys(Keys.DELETE).perform();
-                    Utility.waitFor(3);
+                    Utility.waitFor(5);
                 action.sendKeys("UserUser").perform();
 
             //7.3. Navigate to Login Button & click()
@@ -92,7 +97,7 @@ public class US001_TC01upto03_Login_AllCorrect {
                 WebElement LoginBttn = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
                 // click()
                 action.click(LoginBttn).perform();
-                    Utility.waitFor(3);
+                    Utility.waitFor(5);
 
             //7.4. Collect titles:
                 String titleObject = driver.getTitle();
@@ -103,24 +108,29 @@ public class US001_TC01upto03_Login_AllCorrect {
                 WebElement FunctionalityList = driver.findElement(By.id("user-block"));
                 //
                 action.moveToElement(FunctionalityList).click().perform();
-                    Utility.waitFor(3);
+                    Utility.waitFor(5);
                 // Logout Button
                 WebElement LogOutBtn = driver.findElement(By.xpath("//*[@id=\"popup-window-content-menu-popup-user-menu\"]/div/div/a[3]/span[2]"));
                 //
                 action.moveToElement(LogOutBtn).click().perform();
-                    Utility.waitFor(3);
+                    Utility.waitFor(5);
 
             //7.6. report
-            System.out.println("Login Functionality to page for   " + UsernameList.get(i) + "   is verified");
-            System.out.println("Title of the page is:  " + titleObject);
+            System.out.println("# " + (i+1) + " Login Functionality to page for   " + UsernameList.get(i) + "   is Verified!");
+            System.out.println("\tTitle of the page is:  " + titleObject);
         }
 
 
         //8. print out the List of titles
-        System.out.println("Total verified " + titlesList.size() + " pages");
-        System.out.println("List of the titles: " + titlesList);
+            System.out.println("------------------------------------------------------\nTotal verified " + titlesList.size() + " pages");
+            System.out.println("List of the titles: " + titlesList);
 
-        //9. Ext. quit()
+        //9. reporting about termination of the Testing
+            System.out.println("------------------------------------------------------");
+            System.out.println("Testing is complete!");
+            System.out.println("======================================================");
+
+        //10. Ext. quit()
         Driver.quit(driver);
 
     }
