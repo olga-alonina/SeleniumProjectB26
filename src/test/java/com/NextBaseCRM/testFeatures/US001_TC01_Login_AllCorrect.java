@@ -1,7 +1,7 @@
 package com.NextBaseCRM.testFeatures;
 
 import com.NextBaseCRM.utilities.Driver;
-import com.NextBaseCRM.utilities.DriverUtilities;
+import com.NextBaseCRM.utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +24,7 @@ public class US001_TC01_Login_AllCorrect {
             driver.get("http://login2.nextbasecrm.com");
 
         //3. Ext: verify if you are on Authorization Page, use method
-            DriverUtilities.authorizationPage_TitleVerification(driver);
+            Utility.authorizationPage_TitleVerification(driver);
 
         //------------------------------------------------------//
 
@@ -58,10 +58,10 @@ public class US001_TC01_Login_AllCorrect {
                 action.moveToElement(LoginBox).click().perform();
                 // Select All & Delete
                 action.keyDown(Keys.CONTROL).sendKeys(Keys.chord("A")).keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
-                    DriverUtilities.waitFor(3);
+                    Utility.waitFor(3);
                 // input username from loop
                 action.sendKeys(UsernameList.get(i)).perform();
-                    DriverUtilities.waitFor(3);
+                    Utility.waitFor(3);
 
 
 
@@ -70,7 +70,7 @@ public class US001_TC01_Login_AllCorrect {
                 WebElement PasswordBox = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
                 // move to password
                 action.click(PasswordBox).doubleClick().sendKeys(Keys.DELETE).perform();
-                    DriverUtilities.waitFor(3);
+                    Utility.waitFor(3);
                 action.sendKeys("UserUser").perform();
 
 
@@ -79,7 +79,7 @@ public class US001_TC01_Login_AllCorrect {
                 WebElement LoginBttn = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
                 // click()
                 action.click(LoginBttn).perform();
-                    DriverUtilities.waitFor(3);
+                    Utility.waitFor(3);
 
 
             //7.4. Collect titles:
@@ -92,14 +92,14 @@ public class US001_TC01_Login_AllCorrect {
                 WebElement FunctionalityList = driver.findElement(By.id("user-block"));
 
                 action.moveToElement(FunctionalityList).click().perform();
-                    DriverUtilities.waitFor(3);
+                    Utility.waitFor(3);
 
 
                 // Logout Button
                 WebElement LogOutBtn = driver.findElement(By.xpath("//*[@id=\"popup-window-content-menu-popup-user-menu\"]/div/div/a[3]/span[2]"));
 
                 action.moveToElement(LogOutBtn).click().perform();
-                    DriverUtilities.waitFor(3);
+                    Utility.waitFor(3);
 
             //7.6. report
             System.out.println("Login Functionality to page for   " + UsernameList.get(i) + "   is verified");

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DriverUtilities {
+public class Utility {
 
     /** ADD METHODS: */
 

@@ -1,7 +1,7 @@
 package com.NextBaseCRM.testFeatures;
 
 import com.NextBaseCRM.utilities.Driver;
-import com.NextBaseCRM.utilities.DriverUtilities;
+import com.NextBaseCRM.utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -24,7 +24,7 @@ public class US001_TC04_Login_WroUser_CorPasw {
             driver.get("http://login2.nextbasecrm.com");
 
         //3. Ext: verify if you are on Authorization Page, use method
-            DriverUtilities.authorizationPage_TitleVerification(driver);
+            Utility.authorizationPage_TitleVerification(driver);
 
         //------------------------------------------------------//
 
@@ -38,17 +38,17 @@ public class US001_TC04_Login_WroUser_CorPasw {
             action.moveToElement(LoginBox).click().perform();
             // Select All & Delete
             action.keyDown(Keys.CONTROL).sendKeys(Keys.chord("A")).keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
-            DriverUtilities.waitFor(3);
-            // input username from loop
+            Utility.waitFor(3);
+            // input wrong username
             action.sendKeys("wrongUsername@gmail.com").perform();
-            DriverUtilities.waitFor(3);
+            Utility.waitFor(3);
 
         //7.2. Navigate to PasswordBox & input password:
             // Password Box for password
             WebElement PasswordBox = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
             // move to password
             action.click(PasswordBox).doubleClick().sendKeys(Keys.DELETE).perform();
-            DriverUtilities.waitFor(3);
+            Utility.waitFor(3);
             action.sendKeys("UserUser").perform();
 
         //7.3. Navigate to Login Button & click()
@@ -56,19 +56,19 @@ public class US001_TC04_Login_WroUser_CorPasw {
             WebElement LoginBttn = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
             // click()
             action.click(LoginBttn).perform();
-            DriverUtilities.waitFor(3);
+            Utility.waitFor(3);
 
         //8. verifying the
-        WebElement incorrectLoginOrPassword = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/div[2]"));
+            WebElement incorrectLoginOrPassword = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/div[2]"));
 
-        if (incorrectLoginOrPassword.isDisplayed()) {
-            System.out.println("REPORT: The note \"incorrect login or password\" is Displayed");
-        } else {
-            System.out.println("REPORT: The note \"incorrect login or password\" is NOT Displayed");
-        }
+            if (incorrectLoginOrPassword.isDisplayed()) {
+                System.out.println("REPORT: The note \"incorrect login or password\" is Displayed");
+            } else {
+                System.out.println("REPORT: The note \"incorrect login or password\" is NOT Displayed");
+            }
 
         //9. Ext. quit()
-        Driver.quit(driver);
+            Driver.quit(driver);
 
     }
 }
