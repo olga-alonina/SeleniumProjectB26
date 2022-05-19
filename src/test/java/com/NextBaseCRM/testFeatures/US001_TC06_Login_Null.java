@@ -9,6 +9,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 public class US001_TC06_Login_Null {
+/**
+ * USER STORY 001 - Login Functionality for NextBaseCRM
+ *
+ *  Test Cases 06
+ *  Login with wrong Username and correct Password
+ *
+ *
+ *  Steps:
+ *      Given I am on Authorization Page
+ *      When I enter wrong username
+ *      And I enter correct password
+ *      And I click Login button
+ *      Then I should see note: Incorrect login or password
+ */
 
     /** Main method */
     public static void main(String[] args) {

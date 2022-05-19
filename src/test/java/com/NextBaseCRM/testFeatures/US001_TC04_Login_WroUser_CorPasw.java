@@ -14,14 +14,12 @@ public class US001_TC04_Login_WroUser_CorPasw {
      * USER STORY 001 - Login Functionality for NextBaseCRM
      *
      *  Test Cases 04
-     *  Login with wrong Username and correct Password
+     *  Login with null credentials
      *
      *
      *  Steps:
      *      Given I am on Authorization Page
-     *      When I enter wrong username
-     *      And I enter correct password
-     *      And I click Login button
+     *      When I click Login button
      *      Then I should see note: Incorrect login or password
      */
 
