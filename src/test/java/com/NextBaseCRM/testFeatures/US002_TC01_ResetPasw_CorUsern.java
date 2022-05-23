@@ -16,7 +16,7 @@ public class US002_TC01_ResetPasw_CorUsern {
      *      Then should see note: A code to reset your password...
      */
 
-
+//AloninaOlga. test written and passed will add it 23 May 2022
 
 
 }
