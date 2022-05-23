@@ -16,6 +16,6 @@ public class US002_TC02_ResetPasw_WronUsern {
      *      Then should see note: Login or E-mail not found
      */
 
-
+//AloninaOlga. test written and passed will add it 23 May 2022
 
 }
